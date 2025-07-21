@@ -21,16 +21,21 @@ This repository showcases how I identified, remediated, and verified Windows 10 
 ## Key STIG Remediations
 The table below highlights the STIG remediations that were prioritized based on exploitability, ease of implementation, and system impact. The links in the right column lead to detailed documentation within the `docs/` folder.
 
-| STIG ID(s)                      | Summary                                                 | Link                                                         |
-|---------------------------------|---------------------------------------------------------|--------------------------------------------------------------|
-| WN10-AU-000500 / -000505 / -000510  | Increase size of Application, Security, and System event logs        | *[Event Log Sizes]*             |
-| WN10-00-000155                  | Remove deprecated Windows PowerShell 2.0 feature                          | *[Disable PS2]*                                       |
-| WN10-AC-000005 / -000010 / -000015 | Configure account lockout policy threshold and reset period | *[Account Lockout]*                                    |
-| WN10-AC-000035 / -000040        | Enforce 14+ character passwords and complexity requirements      | *[Password Complexity]*                                       |
-| WN10-CC-000180 / -000185 / -000190 | Disable AutoPlay for all drives and media               | *[Disable AutoPlay]*                                       |
-| WN10-00-000145                  | Set Data Execution Prevention (DEP) policy to “OptOut” using BCDEDIT | *[Configure DEP]*                                       |
-| WN10-CC-000038                  | WDigest authentication disabled                          | *[Disable WDigest]*                                       |
-| WN10-00-000175                  | Secondary Logon Service disabled                         | *[Disable Secondary Logon]*                |
+## 📂 Scripts Directory
+
+All remediation scripts are stored in the `scripts/` folder. Each `.ps1` file is labeled with the corresponding STIG ID(s) and includes detailed usage instructions and logging output. These scripts were created based on failed controls identified in the initial Nessus STIG scan.
+
+| Script Filename                   | STIG ID(s)                                     | Description                                                                 |
+|----------------------------------|------------------------------------------------|-----------------------------------------------------------------------------|
+| `Set-EventLogSize.ps1`           | WN10-AU-000500 / -000505 / -000510             | Configures Application, Security, and System logs to meet minimum size requirements (32MB, 1000MB, 32MB). |
+| `Disable-PowerShell2.ps1`        | WN10-00-000155                                 | Disables PowerShell 2.0 to prevent downgrade attacks and enable logging in newer versions. |
+| `Set-AccountLockoutPolicy.ps1`   | WN10-AC-000005 / -000010 / -000015             | Enforces account lockout settings: 3 attempts, 15-minute duration and reset period. |
+| `Set-PasswordPolicy.ps1`         | WN10-AC-000035 / -000040                       | Enforces strong password policies: minimum 14 characters and complexity enabled. |
+| `Set-MinimumPasswordAge.ps1`     | WN10-AC-000030                                 | Ensures users cannot change passwords repeatedly in a short time to bypass history restrictions. |
+| `Disable-WDigest.ps1`            | WN10-CC-000038                                 | Disables WDigest authentication to prevent storage of plain-text credentials in memory. |
+| `Disable-AutoPlay.ps1`           | WN10-CC-000180 / -000185 / -000190             | Disables AutoPlay and AutoRun features across all drives to prevent malware propagation. |
+| `Set-DEP-OptOut.ps1`             | WN10-00-000145                                 | Sets Data Execution Prevention (DEP) to "OptOut" for enhanced runtime memory protection. |
+| `Disable-SecondaryLogon.ps1`     | WN10-00-000175                                 | Disables the Secondary Logon service to minimize privilege abuse and session hijacking risks. |
 
 
 ## Remediation Steps
@@ -41,33 +46,6 @@ The table below highlights the STIG remediations that were prioritized based on 
 4. Create and run PowerShell scripts to automate the remediation.
 5. Perform a verification scan to confirm the STIG checks have passed.
 
-## Scripts Directory
-
-All PowerShell scripts may be found in the [`scripts/`](./scripts) folder. Each script includes additional documentation and instructions for use:
-
-1. **[Set-EventLogSizes.ps1](./scripts/Set-STIG-EventLogSizes-GPO.ps1)**  
-   - Configures larger log sizes for Application, System, and Security logs to ensure log sizes meet STIG standards.
-
-2. **[Disable-PowerShell2.ps1](./scripts/Disable-PowerShell2.ps1)**  
-   - Removes Windows PowerShell 2.0 to mitigate downgrade attacks.
-
-3. **[Disable-WDigest.ps1](./scripts/Disable-WDigest.ps1)**  
-   - Applies registry fix to disable WDigest.
-
-4. **[Disable-AutoPlay.ps1](./scripts/Disable-AutoPlay.ps1)**  
-   - Disables AutoRun/AutoPlay to reduce drive-based attack vectors.
-
-5. **[Set-AccountLockout.ps1](./scripts/Set-AccountLockout.ps1)**  
-   - Sets account lockout threshold, duration, and reset values.
-
-6. **[Set-PasswordPolicy.ps1](./scripts/Set-PasswordPolicy.ps1)**  
-   - Enables password complexity and length enforcement.
-
-7. **[Disable-SecondaryLogon.ps1](./scripts/Disable-SecondaryLogon.ps1)**  
-   - Disables the seclogon service for privilege reduction.
-
-8. **[Set-DEP-OptOut.ps1](./scripts/Set-DEP-OptOut.ps1)**  
-   - Updates DEP configuration for runtime memory protection.
 
 ## Baseline Scan Results
 
