@@ -43,48 +43,48 @@ The table below highlights the STIG remediations that were prioritized based on 
 
 | STIG ID(s)                                  | Script Filename                   | Description                                                                 |
 |--------------------------------------------|----------------------------------|-----------------------------------------------------------------------------|
-| WN10-AU-000500 / -000505 / -000510          | `Set-EventLogSize.ps1`           | Configures Application, Security, and System logs to meet minimum size requirements (32MB, 1000MB, 32MB). |
+| WN10-00-000145                              | `Set-DEP-OptOut.ps1`             | Sets Data Execution Prevention (DEP) to "OptOut" for enhanced runtime memory protection. |
 | WN10-00-000155                              | `Disable-PowerShell2.ps1`        | Disables PowerShell 2.0 to prevent downgrade attacks and enable logging in newer versions. |
+| WN10-00-000175                              | `Disable-SecondaryLogon.ps1`     | Disables the Secondary Logon service to minimize privilege abuse and session hijacking risks. |
+| WN10-CC-000038                              | `Disable-WDigest.ps1`            | Disables WDigest authentication to prevent storage of plain-text credentials in memory. |
+| WN10-CC-000180 / -000185 / -000190          | `Disable-AutoPlay.ps1`           | Disables AutoPlay and AutoRun features across all drives to prevent malware propagation. |
+| WN10-AU-000500 / -000505 / -000510          | `Set-EventLogSize.ps1`           | Configures Application, Security, and System logs to meet minimum size requirements (32MB, 1000MB, 32MB). |
 | WN10-AC-000005 / -000010 / -000015          | `Set-AccountLockoutPolicy.ps1`   | Enforces account lockout settings: 3 attempts, 15-minute duration and reset period. |
 | WN10-AC-000035 / -000040                    | `Set-PasswordPolicy.ps1`         | Enforces strong password policies: minimum 14 characters and complexity enabled. |
 | WN10-AC-000030                              | `Set-MinimumPasswordAge.ps1`     | Ensures users cannot change passwords repeatedly in a short time to bypass history restrictions. |
-| WN10-CC-000038                              | `Disable-WDigest.ps1`            | Disables WDigest authentication to prevent storage of plain-text credentials in memory. |
-| WN10-CC-000180 / -000185 / -000190          | `Disable-AutoPlay.ps1`           | Disables AutoPlay and AutoRun features across all drives to prevent malware propagation. |
-| WN10-00-000145                              | `Set-DEP-OptOut.ps1`             | Sets Data Execution Prevention (DEP) to "OptOut" for enhanced runtime memory protection. |
-| WN10-00-000175                              | `Disable-SecondaryLogon.ps1`     | Disables the Secondary Logon service to minimize privilege abuse and session hijacking risks. |
 
 ---
 
 ## 📂 Scripts Directory
 
-Below is a list and summary of each PowerShell remediation script included in the `scripts/` folder. Each `.ps1` file is labeled with the corresponding STIG ID(s) and includes detailed usage instructions and logging output. These scripts were created based on failed controls identified in the initial STIG scan.
+Below is a list and summary of each PowerShell remediation script included in the `scripts/` folder. Each `.ps1` file is labeled with the corresponding STIG ID(s) and includes detailed usage instructions and logging output. These scripts were created based on failed controls identified in the initial Tenable STIG scan.
 
-- **`Set-EventLogSize.ps1`**  
-  Sets minimum log sizes for Application (32MB), Security (1000MB), and System (32MB) event logs to comply with STIG thresholds.
-
-- **`Disable-PowerShell2.ps1`**  
-  Disables the legacy PowerShell 2.0 engine, which lacks modern security logging and is vulnerable to downgrade attacks.
-
-- **`Set-AccountLockoutPolicy.ps1`**  
-  Enforces account lockout settings: 3 failed login attempts, 15-minute lockout duration, and a 15-minute reset counter.
-
-- **`Set-PasswordPolicy.ps1`**  
-  Configures password policy to require at least 14 characters and enables complexity rules (e.g., upper/lowercase, numbers).
-
-- **`Set-MinimumPasswordAge.ps1`**  
-  Prevents users from changing passwords too frequently by setting the minimum password age to 1 day.
-
-- **`Disable-WDigest.ps1`**  
-  Disables WDigest authentication to prevent Windows from storing cleartext passwords in memory.
-
-- **`Disable-AutoPlay.ps1`**  
-  Turns off AutoPlay and AutoRun for all drives and media types, reducing the risk of malware spread via external devices.
-
-- **`Set-DEP-OptOut.ps1`**  
+- **Set-DEP-OptOut.ps1**  
   Configures Data Execution Prevention (DEP) to "OptOut" mode using `bcdedit`, enhancing protection against memory attacks.
 
-- **`Disable-SecondaryLogon.ps1`**  
+- **Disable-PowerShell2.ps1**  
+  Disables the legacy PowerShell 2.0 engine, which lacks modern security logging and is vulnerable to downgrade attacks.
+
+- **Disable-SecondaryLogon.ps1**  
   Disables the Secondary Logon (seclogon) service, which can be exploited to run elevated commands in user sessions.
+
+- **Disable-WDigest.ps1**  
+  Disables WDigest authentication to prevent Windows from storing cleartext passwords in memory.
+
+- **Disable-AutoPlay.ps1**  
+  Turns off AutoPlay and AutoRun for all drives and media types, reducing the risk of malware spread via external devices.
+
+- **Set-EventLogSize.ps1**  
+  Sets minimum log sizes for Application (32MB), Security (1000MB), and System (32MB) event logs to comply with STIG thresholds.
+
+- **Set-AccountLockoutPolicy.ps1**  
+  Enforces account lockout settings: 3 failed login attempts, 15-minute lockout duration, and a 15-minute reset counter.
+
+- **Set-PasswordPolicy.ps1**  
+  Configures password policy to require at least 14 characters and enables complexity rules (e.g., upper/lowercase, numbers).
+
+- **Set-MinimumPasswordAge.ps1**  
+  Prevents users from changing passwords too frequently by setting the minimum password age to 1 day.
 
 
 ---
