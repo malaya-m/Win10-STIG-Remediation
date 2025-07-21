@@ -40,18 +40,18 @@ An initial STIG scan was performed on Tenable which detected numerous policy fai
 ## Key STIG Remediations
 The table below highlights the STIG remediations that were prioritized based on exploitability, ease of implementation, and system impact. The links provided in the left column lead to more detailed documentation within the `docs/` folder.
 
-| Script Filename                   | STIG ID(s)                                     | Description                                                                 |
-|----------------------------------|------------------------------------------------|-----------------------------------------------------------------------------|
-| `Set-EventLogSize.ps1`           | WN10-AU-000500 / -000505 / -000510             | Configures Application, Security, and System logs to meet minimum size requirements (32MB, 1000MB, 32MB). |
-| `Disable-PowerShell2.ps1`        | WN10-00-000155                                 | Disables PowerShell 2.0 to prevent downgrade attacks and enable logging in newer versions. |
-| `Set-AccountLockoutPolicy.ps1`   | WN10-AC-000005 / -000010 / -000015             | Enforces account lockout settings: 3 attempts, 15-minute duration and reset period. |
-| `Set-PasswordPolicy.ps1`         | WN10-AC-000035 / -000040                       | Enforces strong password policies: minimum 14 characters and complexity enabled. |
-| `Set-MinimumPasswordAge.ps1`     | WN10-AC-000030                                 | Ensures users cannot change passwords repeatedly in a short time to bypass history restrictions. |
-| `Disable-WDigest.ps1`            | WN10-CC-000038                                 | Disables WDigest authentication to prevent storage of plain-text credentials in memory. |
-| `Disable-AutoPlay.ps1`           | WN10-CC-000180 / -000185 / -000190             | Disables AutoPlay and AutoRun features across all drives to prevent malware propagation. |
-| `Set-DEP-OptOut.ps1`             | WN10-00-000145                                 | Sets Data Execution Prevention (DEP) to "OptOut" for enhanced runtime memory protection. |
-| `Disable-SecondaryLogon.ps1`     | WN10-00-000175                                 | Disables the Secondary Logon service to minimize privilege abuse and session hijacking risks. |
 
+| STIG ID(s)                                  | Script Filename                   | Description                                                                 |
+|--------------------------------------------|----------------------------------|-----------------------------------------------------------------------------|
+| WN10-AU-000500 / -000505 / -000510          | `Set-EventLogSize.ps1`           | Configures Application, Security, and System logs to meet minimum size requirements (32MB, 1000MB, 32MB). |
+| WN10-00-000155                              | `Disable-PowerShell2.ps1`        | Disables PowerShell 2.0 to prevent downgrade attacks and enable logging in newer versions. |
+| WN10-AC-000005 / -000010 / -000015          | `Set-AccountLockoutPolicy.ps1`   | Enforces account lockout settings: 3 attempts, 15-minute duration and reset period. |
+| WN10-AC-000035 / -000040                    | `Set-PasswordPolicy.ps1`         | Enforces strong password policies: minimum 14 characters and complexity enabled. |
+| WN10-AC-000030                              | `Set-MinimumPasswordAge.ps1`     | Ensures users cannot change passwords repeatedly in a short time to bypass history restrictions. |
+| WN10-CC-000038                              | `Disable-WDigest.ps1`            | Disables WDigest authentication to prevent storage of plain-text credentials in memory. |
+| WN10-CC-000180 / -000185 / -000190          | `Disable-AutoPlay.ps1`           | Disables AutoPlay and AutoRun features across all drives to prevent malware propagation. |
+| WN10-00-000145                              | `Set-DEP-OptOut.ps1`             | Sets Data Execution Prevention (DEP) to "OptOut" for enhanced runtime memory protection. |
+| WN10-00-000175                              | `Disable-SecondaryLogon.ps1`     | Disables the Secondary Logon service to minimize privilege abuse and session hijacking risks. |
 
 ---
 
