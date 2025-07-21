@@ -1,16 +1,18 @@
 # Windows 10 STIG Remediation Repository
 
-This repository showcases how I identified, remediated, and verified Windows 10 (Azure VM) security misconfigurations based on the DISA STIG benchmarks using PowerShell scripts and Nessus vulnerability scans.
+This repository showcases how I identified, remediated, and verified Windows 10 (Azure VM) security misconfigurations based on the DISA STIG benchmarks using PowerShell scripts and Tenable vulnerability scans.
 
 ## Table of Contents
 
 1. [Project Overview](#project-overview)
-2. [Key STIG Remediations](#key-stig-remediations)
-3. [Scripts Directory](#scripts-directory)
-4. [Remediation Steps](#remediation-steps)
-5. [Initial Scan](#initial-scan)
-6. [Post-Remediation Scan](#post-remediation-scan)
-7. 
+2. [Initial Scan Results](#initial-scan-results)
+3. [Remediation Steps](#remediation-steps)
+4. [Priority STIG Remediations](#priority-stig-remediations)
+5. [Scripts Directory](#scripts-directory)
+6. [Initial Scan Results](#initial-scan-results)
+7. [Post-Remediation Scan Results](#post-remediation-scan)
+8. [Post-Remediation Testing](#post-remediation-testing)
+9. [Next Steps (Maintenance Mode](#next-steps-maintenance-mode)
 
 ---
 
@@ -21,9 +23,13 @@ This repository showcases how I identified, remediated, and verified Windows 10 
 
 ---
 
-## Baseline Scan Results
+## Initial Scan Results
 
-An initial STIG scan was performed on Tenable which detected numerous policy failures. A copy of the initial scan report is available under:
+An initial STIG scan was performed on Tenable which detected numerous policy failures. 
+
+Initial STIG scan results:
+<img width="1064" height="278" alt="Screenshot 2025-07-21 at 4 43 24 PM" src="https://github.com/user-attachments/assets/fd76b268-0920-452b-a9a3-63404d687816" />
+[View Scan Report]
 
 ---
 
@@ -33,11 +39,11 @@ An initial STIG scan was performed on Tenable which detected numerous policy fai
 2. Identify failed STIG checks from the initial scan report.
 3. Prioritize low-disruption, high-impact items.
 4. Create and run PowerShell scripts to automate the remediation.
-5. Perform a verification scan to confirm the STIG checks have passed.
+5. Perform a post-remediation scan to confirm the STIG checks have passed.
 
 ---
 
-## Key STIG Remediations
+## Priority STIG Remediations
 The table below highlights the STIG remediations that were prioritized based on exploitability, ease of implementation, and system impact. The links provided in the left column lead to more detailed documentation within the `docs/` folder.
 
 
@@ -89,25 +95,49 @@ Below is a list and summary of each PowerShell remediation script included in th
 
 ---
 
-## Final Results
+## Post-Remediation Scan Results
 
-After running each PowerShell script, a verification scan was performed to validate remediation success. Updated scan results:
+After running each PowerShell script, a post-remediation scan was performed to validate the STIG checks have passed successfully. 
+
+Post-remediation scan results:
+
+[View Scan Report]
 
 ---
 
 ## Post-Remediation Testing
 
-After applying each STIG remediation, the followings tasks were completed for post-remediation testing:
-- Confirming registry and service state changes.
-- Tested system stability and core functionality.
-- Reviewed updated scan reports.
+After each STIG remediation was applied, the following validation steps were performed to ensure the system remained secure and operational:
+
+- **Verified Registry and Policy Changes**  
+  Confirmed registry keys, local security policy settings, and service states were updated as expected.
+
+- **Tested System Functionality**  
+  Ensured system boot, login, user operations, and critical applications continued to function without issues.
+
+- **Reviewed Updated Nessus Scan Reports**  
+  Re-scanned the system using the Tenable Nessus STIG Compliance policy to validate that the remediated controls no longer appeared as findings.
+
+- **Spot-Checked Operational Logs**  
+  Reviewed Windows Event Viewer and `secedit` output for errors or misconfigurations introduced by changes.
+
+- **Performed Rollback Tests (if applicable)**  
+  Where feasible, validated the ability to revert changes without disrupting system integrity.
 
 ---
 
 ## Next Steps (Maintenance Mode)
 
-In addition to addressing these initial vulnerabilities, the next plan of action will be to:
-- Continue periodic vulnerability scans 
-- Track new/updated STIGs
-- Monitor system logs for anomalies
-- Expand automation with compliance reporting
+To maintain a secure and compliant system posture beyond the initial remediations, the following practices will be adopted:
+
+- **Conduct Regular Vulnerability Scans**  
+  Perform periodic Tenable Nessus scans to detect newly introduced vulnerabilities and verify compliance over time.
+
+- **Track STIG Updates**  
+  Monitor DISA releases for new or revised Windows 10 STIG controls and integrate them into the remediation workflow as needed.
+
+- **Monitor System and Security Logs**  
+  Continuously review Event Viewer and audit logs to identify anomalous activity or misconfigurations.
+
+- **Enhance Automation and Reporting**  
+  Expand the use of PowerShell scripts for compliance checks and integrate reporting tools for streamlined documentation and audit readiness.
