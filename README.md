@@ -56,27 +56,6 @@ Initial STIG scan results:
 6. **Document and Iterate**  
    Record results, update scripts or configurations as needed, and prepare for ongoing compliance monitoring.
 
-### 🛠️ Visual Workflow
-
-```mermaid
-graph TD
-    A[Start: Initial Scan with Nessus\nSTIG v3r4 Policy] --> B[Analyze Scan Results\nIdentify Failed STIGs]
-    B --> C[Prioritize Remediations\nLow Disruption / High Impact]
-    C --> D[Develop PowerShell Scripts\nPer STIG Control]
-    D --> E[Execute Scripts\nAutomated Configuration]
-    E --> F[Post-Remediation Testing]
-    F --> F1[Verify Registry/Service Changes]
-    F --> F2[Test System Stability]
-    F --> F3[Review Logs for Anomalies]
-    F --> F4[Re-scan with Nessus]
-    F1 --> G[Document Results]
-    F2 --> G
-    F3 --> G
-    F4 --> G
-    G --> H[Iterate and Monitor\nTrack New STIGs + Reassess Periodically]
-    H --> I[End]
-
-
 ---
 
 ## Priority STIG Remediations
