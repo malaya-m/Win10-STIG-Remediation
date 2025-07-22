@@ -2,32 +2,15 @@
 
 This folder contains each PowerShell remediation script. Each `.ps1` file is labeled with the corresponding STIG ID(s) and includes detailed usage instructions and logging output. These scripts were created based on failed controls identified in the initial Tenable STIG scan.
 
-**Set-DEP-OptOut.ps1** - STIG ID: `WN10-00-000145` 
-- Configures Data Execution Prevention (DEP) to "OptOut" mode using `bcdedit`, enhancing protection against memory attacks.
-
-**Disable-PowerShell2.ps1** - STIG ID: `WN10-00-000155`
-- Disables the legacy PowerShell 2.0 engine, which lacks modern security logging and is vulnerable to downgrade attacks.
-
-**Disable-SecondaryLogon.ps1** - STIG ID: `WN10-00-000175`
-- Disables the Secondary Logon (seclogon) service, which can be exploited to run elevated commands in user sessions.
-
-**Disable-WDigest.ps1** - STIG ID: `WN10-CC-000038`
-- Disables WDigest authentication to prevent Windows from storing cleartext passwords in memory.
-
-**Disable-AutoPlay.ps1** - STIG IDs: `WN10-CC-000180`, `WN10-CC-000185`, `WN10-CC-000190`
-- Turns off AutoPlay and AutoRun for all drives and media types, reducing the risk of malware spread via external devices.
-
-**Set-EventLogSize.ps1** - STIG IDs: `WN10-AU-000500`, `WN10-AU-000505`, `WN10-AU-000510`
-- Sets minimum log sizes for Application (32MB), Security (1000MB), and System (32MB) event logs to comply with STIG thresholds.
-
-**Set-AccountLockoutPolicy.ps1** - STIG IDs: `WN10-AC-000005`, `WN10-AC-000010`, `WN10-AC-000015`
-- Enforces account lockout settings: 3 failed login attempts, 15-minute lockout duration, and a 15-minute reset counter.
-
-**Set-PasswordPolicy.ps1** - STIG IDs: `WN10-AC-000035`, `WN10-AC-000040`
-- Configures password policy to require at least 14 characters and enables complexity rules (e.g., upper/lowercase, numbers).
-
-**Set-MinimumPasswordAge.ps1** - STIG ID: `WN10-AC-000030`
-- Prevents users from changing passwords too frequently by setting the minimum password age to 1 day.
-
-**Rename-GuestAccount.ps1** - STIG ID: `WN10-00-000130`
-- Renames the default Windows Guest account to prevent exploitation by attackers who target accounts with known names.
+| STIG ID(s)                                  | Script Filename                   | Description                                                                 |
+|--------------------------------------------|----------------------------------|-----------------------------------------------------------------------------|
+| [WN10-00-000145](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-00-000145.md)                              | `Set-DEP-OptOut.ps1`             | Sets Data Execution Prevention (DEP) to "OptOut" for enhanced runtime memory protection. |
+| [WN10-00-000155](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-00-000155.md)                              | `Disable-PowerShell2.ps1`        | Disables PowerShell 2.0 to prevent downgrade attacks and enable logging in newer versions. |
+| [WN10-00-000175](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-00-000175.md)                              | `Disable-SecondaryLogon.ps1`     | Disables the Secondary Logon service to minimize privilege abuse and session hijacking risks. |
+| [WN10-CC-000038](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-CC-000038.md)                              | `Disable-WDigest.ps1`            | Disables WDigest authentication to prevent storage of plain-text credentials in memory. |
+| [WN10-CC-000180](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-CC-000180.md) / [-000185](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-CC-000185.md) / [-000190](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-CC-000190.md)          | `Disable-AutoPlay.ps1`           | Disables AutoPlay and AutoRun features across all drives to prevent malware propagation. |
+| [WN10-AU-000500](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-AU-000500.md) / [-000505](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-AU-000505.md) / [-000510](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-AU-000510.md)          | `Set-EventLogSize.ps1`           | Configures Application, Security, and System logs to meet minimum size requirements (32MB, 1000MB, 32MB). |
+| [WN10-AC-000005](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-AC-000005.md) / [-000010](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-AC-000010.md) / [-000015](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-AC-000015.md)          | `Set-AccountLockoutPolicy.ps1`   | Enforces account lockout settings: 3 attempts, 15-minute duration and reset period. |
+| [WN10-AC-000035](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-AC-000035.md) / [-000040](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-AC-000040.md)                    | `Set-PasswordPolicy.ps1`         | Enforces strong password policies: minimum 14 characters and complexity enabled. |
+| [WN10-AC-000030](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10-AC-000030.md)                              | `Set-MinimumPasswordAge.ps1`     | Ensures users cannot change passwords repeatedly in a short time to bypass history restrictions. |
+| [WN10-00-000130](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/stig-overview/WN10%E2%80%9100%E2%80%91000130.md)                              | `Remove-UserCertInstallFiles.ps1`        | Removes unused `.p12` and `.pfx` certificate files to reduce credential theft risk. |
