@@ -4,8 +4,8 @@
 
 .NOTES
     Author          : Malaya Manacop
-    LinkedIn        : linkedin.com/in/malayamanacop
-    GitHub          : github.com/malayamanacop
+    LinkedIn        : linkedin.com/in/malaya-m
+    GitHub          : github.com/malaya-m
     Date Created    : 2025-07-20
     Last Modified   : 2025-07-20
     Version         : 1.0
@@ -16,8 +16,7 @@
 .TESTED ON
     Date(s) Tested  : 2025-07-20
     Tested By       : Malaya Manacop
-    Systems Tested  : Windows 10 VM (Hyper-V), Remote Desktop session
-    PowerShell Ver. : 5.1+
+    Systems Tested  : Windows 10 (Version 10.0.19045.5487)
 
 .USAGE
     Run this script as Administrator in a PowerShell session.
