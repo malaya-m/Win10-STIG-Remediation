@@ -77,7 +77,7 @@ The table below highlights the STIG remediations that were prioritized based on 
 
 ## Scripts Directory
 
-The PowerShell remediation scripts are located in the `scripts/` folder. Each `.ps1` file is labeled with the corresponding STIG ID(s) and includes detailed usage instructions and logging output. These scripts were created based on failed controls identified in the initial Tenable STIG scan.
+The PowerShell remediation scripts are located in the [`scripts/`](./scripts/) folder. Each `.ps1` file is labeled with the corresponding STIG ID(s) and includes detailed usage instructions and logging output. These scripts were created based on failed controls identified in the initial Tenable STIG scan.
 
 ---
 
