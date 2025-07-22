@@ -31,7 +31,7 @@ Initial STIG scan results:
 
 <img width="1131" height="342" alt="Screenshot 2025-07-21 at 7 12 36 PM" src="https://github.com/user-attachments/assets/4814a922-11a2-42f7-9adf-e893e588de25" />
 
-[Initial Scan Report](scan-reports/Initial Scan - STIG Implementation.pdf)
+[Initial Scan Report](./scan-reports/Initial Scan - STIG Implementation.pdf)
 
 ---
 
@@ -80,7 +80,7 @@ The table below highlights the STIG remediations that were prioritized based on 
 
 ---
 
-## 📂 Scripts Directory
+## Scripts Directory
 
 Below is a list and summary of each PowerShell remediation script included in the `scripts/` folder. Each `.ps1` file is labeled with the corresponding STIG ID(s) and includes detailed usage instructions and logging output. These scripts were created based on failed controls identified in the initial Tenable STIG scan.
 
@@ -125,12 +125,12 @@ Post-remediation STIG scan results:
 
 <img width="1130" height="342" alt="Post-remediation scan results" src="https://github.com/user-attachments/assets/369c3103-c8f8-4fcf-95b6-eb01941984e3" />
 
-[[Post-Remediation Scan Report]](scan-reports/Post-Remediation Scan - STIG Implementation.pdf)
+[Post-Remediation Scan Report](./scan-reports/Post-Remediation Scan - STIG Implementation.pdf)
 
 
 ### Scan Results Summary
 
-After implementing the prioritized STIG remediations, I conducted a post-remediation scan using Tenable Nessus. The initial scan identified 147 failed checks, whereas the updated scan shows 132 remaining failures, indicating that 15 findings were successfully resolved through remediation efforts.
+After implementing the prioritized STIG remediations, I conducted a post-remediation scan using Tenable Nessus. The initial scan identified **147 failed checks**, whereas the post-remediation scan shows **132 remaining failures**, indicating that **15 findings were successfully resolved** through remediation efforts.
 
 ---
 
