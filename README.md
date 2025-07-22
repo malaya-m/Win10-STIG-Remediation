@@ -84,9 +84,7 @@ The PowerShell remediation scripts are located in the `scripts/` folder. Each `.
 
 ## Post-Remediation Scan Results
 
-After running each PowerShell script, a post-remediation scan was performed to validate the STIG checks have passed successfully. 
-
-Post-remediation STIG scan results:
+After running each PowerShell script, a post-remediation scan was performed to validate the STIG checks have passed successfully.
 
 <img width="1130" height="342" alt="Post-remediation scan results" src="https://github.com/user-attachments/assets/369c3103-c8f8-4fcf-95b6-eb01941984e3" />
 
