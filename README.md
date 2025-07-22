@@ -26,8 +26,6 @@ This repository showcases how I identified, remediated, and verified Windows 10 
 
 An initial STIG scan was performed on Tenable which detected numerous policy failures. 
 
-Initial STIG scan results:
-
 <img width="1131" height="342" alt="Screenshot 2025-07-21 at 7 12 36 PM" src="https://github.com/user-attachments/assets/4814a922-11a2-42f7-9adf-e893e588de25" />
 
 [Initial Scan Report](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/scan-reports/Initial%20Scan%20-%20STIG%20Implementation.pdf)
