@@ -122,8 +122,12 @@ Post-remediation STIG scan results:
 
 <img width="1130" height="342" alt="Post-remediation scan results" src="https://github.com/user-attachments/assets/369c3103-c8f8-4fcf-95b6-eb01941984e3" />
 
-
 [View Scan Report]
+
+
+### Scan Results Summary
+
+After implementing the prioritized STIG remediations, I conducted a post-remediation scan using Tenable Nessus. The initial scan identified 147 failed checks, whereas the updated scan shows 132 remaining failures, indicating that 15 findings were successfully resolved through remediation efforts.
 
 ---
 
