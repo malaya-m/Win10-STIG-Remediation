@@ -1,11 +1,15 @@
 <#
 .SYNOPSIS
-    This PowerShell script configures Data Execution Prevention (DEP) to “OptOut” mode using bcdedit to enforce runtime memory protections.
+    Configures Data Execution Prevention (DEP) to “OptOut” mode to comply with STIG requirement WN10-00-000145.
+
+.DESCRIPTION
+    Sets the DEP policy using `bcdedit` to enforce runtime memory protections for all processes except those explicitly exempted.
+    A system reboot is required for the change to take effect.
 
 .NOTES
-    Author          : Malaya Manacop
-    LinkedIn        : linkedin.com/in/malaya-m
-    GitHub          : github.com/malaya-m
+    Author          : Malaya M.
+    LinkedIn        : https://linkedin.com/in/malaya-m
+    GitHub          : https://github.com/malaya-m
     Date Created    : 2025-07-20
     Last Modified   : 2025-07-20
     Version         : 1.0
@@ -15,8 +19,9 @@
 
 .TESTED ON
     Date(s) Tested  : 2025-07-20
-    Tested By       : Malaya Manacop
-    Systems Tested  : Windows 10 (Version 10.0.19045.5487)
+    Tested By       : Malaya M.
+    Systems Tested  : Windows 10 (10.0.19045.5487)
+    PowerShell Ver. : 5.1
 
 .USAGE
     Run this script as Administrator in a PowerShell session.
