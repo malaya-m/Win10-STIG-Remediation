@@ -31,9 +31,7 @@ Initial STIG scan results:
 
 <img width="1131" height="342" alt="Screenshot 2025-07-21 at 7 12 36 PM" src="https://github.com/user-attachments/assets/4814a922-11a2-42f7-9adf-e893e588de25" />
 
-
-
-[View Scan Report]
+[Initial Scan Report](scan-reports/Initial Scan - STIG Implementation.pdf)
 
 ---
 
@@ -122,7 +120,7 @@ Post-remediation STIG scan results:
 
 <img width="1130" height="342" alt="Post-remediation scan results" src="https://github.com/user-attachments/assets/369c3103-c8f8-4fcf-95b6-eb01941984e3" />
 
-[View Scan Report]
+[[Post-Remediation Scan Report]](scan-reports/Post-Remediation Scan - STIG Implementation.pdf)
 
 
 ### Scan Results Summary
