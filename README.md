@@ -1,6 +1,6 @@
 # Windows 10 STIG Remediation Repository
 
-This repository showcases how I identified, remediated, and verified Windows 10 (Azure VM) security misconfigurations based on the [DISA Microsoft Windows 10 STIG v3r4](https://www.tenable.com/audits/DISA_STIG_Microsoft_Windows_10_v3r4) guidelines using PowerShell scripts and Tenable vulnerability scans.
+This repository documents how I secured a Windows 10 virtual machine (hosted on Azure) using [DISA’s Microsoft Windows 10 STIG v3r4](https://www.tenable.com/audits/DISA_STIG_Microsoft_Windows_10_v3r4) guidelines. Through Tenable STIG scans and PowerShell scripts, I identified, remediated, and verified critical misconfigurations.
 
 ## Table of Contents
 
@@ -17,8 +17,8 @@ This repository showcases how I identified, remediated, and verified Windows 10 
 
 ## Project Overview
 
-- _**Purpose**_: This project demonstrates my hands-on ability to secure a Windows 10 system in alignment with DISA STIG guidelines. Using a Tenable Nessus STIG scan on an Azure-hosted VM, I remediated high-risk findings and validated the results.
-- _**Scope**_: This project focuses on select remediations from the the [DISA Microsoft Windows 10 STIG v3r4](https://www.tenable.com/audits/DISA_STIG_Microsoft_Windows_10_v3r4) guidelines, prioritized by exploitability, ease of implementation, and system impact.
+- _**Purpose**_: This project highlights my practical experience applying DISA STIG compliance to harden a Windows 10 system. I used Tenable Nessus to scan for vulnerabilities and remediated high-risk findings with PowerShell, verifying each fix post-deployment.
+- _**Scope**_: Focus is placed on high-impact remediations from the v3r4 STIG release, selected based on exploitability, ease of implementation, and overall system impact.
 
 ---
 
