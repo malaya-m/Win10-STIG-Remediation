@@ -18,8 +18,8 @@ This repository showcases how I identified, remediated, and verified Windows 10 
 
 ## Project Overview
 
-- **Purpose**: This project demonstrates my hands-on ability to secure a Windows 10 system in alignment with DISA STIG guidelines. Using a Tenable Nessus STIG scan on an Azure-hosted VM, I remediated high-risk findings and validated the results.
-- **Scope**: This project focuses on select remediations from the [DISA Microsoft Windows 10 STIG (v3r4)]((https://www.tenable.com/audits/DISA_STIG_Microsoft_Windows_10_v3r4)), prioritized by exploitability, ease of implementation, and system impact.
+- _**Purpose**_: This project demonstrates my hands-on ability to secure a Windows 10 system in alignment with DISA STIG guidelines. Using a Tenable Nessus STIG scan on an Azure-hosted VM, I remediated high-risk findings and validated the results.
+- _**Scope**_: This project focuses on select remediations from the [DISA Microsoft Windows 10 STIG (v3r4)]((https://www.tenable.com/audits/DISA_STIG_Microsoft_Windows_10_v3r4)), prioritized by exploitability, ease of implementation, and system impact.
 
 ---
 
@@ -31,7 +31,7 @@ Initial STIG scan results:
 
 <img width="1131" height="342" alt="Screenshot 2025-07-21 at 7 12 36 PM" src="https://github.com/user-attachments/assets/4814a922-11a2-42f7-9adf-e893e588de25" />
 
-[Initial Scan Report](./scan-reports/Initial Scan - STIG Implementation.pdf)
+[Initial Scan Report]((https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/scan-reports/Initial%20Scan%20-%20STIG%20Implementation.pdf))
 
 ---
 
@@ -76,7 +76,6 @@ The table below highlights the STIG remediations that were prioritized based on 
 | WN10-AC-000035 / -000040                    | `Set-PasswordPolicy.ps1`         | Enforces strong password policies: minimum 14 characters and complexity enabled. |
 | WN10-AC-000030                              | `Set-MinimumPasswordAge.ps1`     | Ensures users cannot change passwords repeatedly in a short time to bypass history restrictions. |
 | WN10-00-000130                              | `Rename-GuestAccount.ps1`        | Renames the built-in Guest account to reduce exposure to known account exploits. |
-
 
 ---
 
@@ -125,7 +124,7 @@ Post-remediation STIG scan results:
 
 <img width="1130" height="342" alt="Post-remediation scan results" src="https://github.com/user-attachments/assets/369c3103-c8f8-4fcf-95b6-eb01941984e3" />
 
-[Post-Remediation Scan Report](./scan-reports/Post-Remediation Scan - STIG Implementation.pdf)
+[Post-Remediation Scan Report](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/scan-reports/Post-Remediation%20Scan%20-%20STIG%20Implementation.pdf)
 
 
 ### Scan Results Summary
