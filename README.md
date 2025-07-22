@@ -58,7 +58,7 @@ An initial STIG scan was performed on Tenable which detected numerous policy fai
 ---
 
 ## Priority STIG Remediations
-The table below highlights the STIG remediations that were prioritized based on exploitability, ease of implementation, and system impact. Each STIG ID in the left column provides a link to more detailed documentation within the `stig-overview/` folder.
+The table below highlights the STIG remediations that were prioritized based on exploitability, ease of implementation, and system impact. Each STIG ID in the left column provides a link to more detailed documentation within the [`stig-overview/`](./stig-overview/) folder.
 
 
 | STIG ID(s)                                  | Script Filename                   | Description                                                                 |
@@ -70,7 +70,7 @@ The table below highlights the STIG remediations that were prioritized based on 
 | [`WN10-CC-000180`](./stig-overview/WN10-CC-000180.md) / [`-000185`](./stig-overview/WN10-CC-000185.md) / [`-000190`](.stig-overview/WN10-CC-000190.md)          | [`Disable-AutoPlay-AutoRun.ps1`](./scripts/Disable-AutoPlay-AutoRun.ps1)           | Disables AutoPlay and AutoRun features across all drives to prevent malware propagation. |
 | [`WN10-AU-000500`](./stig-overview/WN10-AU-000500.md) / [`-000505`](./stig-overview/WN10-AU-000505.md) / [`-000510`](./stig-overview/WN10-AU-000510.md)          | [`Set-EventLogSizes-GPO.ps1`](./scripts/Set-EventLogSizes-GPO.ps1)           | Configures Application, Security, and System logs to meet minimum size requirements (32MB, 1000MB, 32MB). |
 | [`WN10-AC-000005`](./stig-overview/WN10-AC-000005.md) / [`-000010`](./stig-overview/WN10-AC-000010.md) / [`-000015`](./stig-overview/WN10-AC-000015.md)          | [`Enforce-AccountLockout-NetAccounts.ps1`](./scripts/Enforce-AccountLockout-NetAccounts.ps1)   | Enforces account lockout settings: 3 attempts, 15-minute duration and reset period. |
-| [`WN10-AC-000035`](./stig-overview/WN10-AC-000035.md) / [-000040](./stig-overview/WN10-AC-000040.md)                    | [`Set-PasswordPolicy.ps1`](./scripts/Set-PasswordPolicy.ps1)         | Enforces strong password policies: minimum 14 characters and complexity enabled. |
+| [`WN10-AC-000035`](./stig-overview/WN10-AC-000035.md) / [`-000040`](./stig-overview/WN10-AC-000040.md)                    | [`Set-PasswordPolicy.ps1`](./scripts/Set-PasswordPolicy.ps1)         | Enforces strong password policies: minimum 14 characters and complexity enabled. |
 | [`WN10-AC-000025`](./stig-overview/WN10-AC-000025.md)                              | [`Set-MaxPasswordAge.ps1`](./scripts/Set-MaxPasswordAge.ps1)        | Enforces regular password changes to limit the lifespan of compromised credentials. |
 | [`WN10-AC-000030`](./stig-overview/WN10-AC-000030.md)                              | [`Set-MinPasswordAge.ps1`](./scripts/Set-MinPasswordAge.ps1)     | Ensures users cannot change passwords repeatedly in a short time to bypass history restrictions. |
 ---
