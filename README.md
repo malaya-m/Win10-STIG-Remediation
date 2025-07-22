@@ -5,12 +5,11 @@ This repository showcases how I identified, remediated, and verified Windows 10 
 ## Table of Contents
 
 1. [Project Overview](#project-overview)
-2. [Initial Scan](#initial-scan)
+2. [Initial Scan Results](#initial-scan-results)
 3. [Remediation Steps](#remediation-steps)
 4. [Priority STIG Remediations](#priority-stig-remediations)
 5. [Scripts Directory](#scripts-directory)
-6. [Initial Scan Results](#initial-scan-results)
-7. [Post-Remediation Scan Results](#post-remediation-scan)
+7. [Post-Remediation Scan Results](#post-remediation-scan-results)
 8. [Post-Remediation Testing](#post-remediation-testing)
 9. [Next Steps (Maintenance Mode)](#next-steps-maintenance-mode)
 
@@ -23,7 +22,7 @@ This repository showcases how I identified, remediated, and verified Windows 10 
 
 ---
 
-## Initial Scan
+## Initial Scan Results
 
 An initial STIG scan was performed on Tenable which detected numerous policy failures. 
 
@@ -61,7 +60,7 @@ Initial STIG scan results:
 ---
 
 ## Priority STIG Remediations
-The table below highlights the STIG remediations that were prioritized based on exploitability, ease of implementation, and system impact. Each STIG ID in the left column provides a link to more detailed documentation within the `stig-overview` folder.
+The table below highlights the STIG remediations that were prioritized based on exploitability, ease of implementation, and system impact. Each STIG ID in the left column provides a link to more detailed documentation within the `stig-overview/` folder.
 
 
 | STIG ID(s)                                  | Script Filename                   | Description                                                                 |
@@ -85,7 +84,7 @@ The PowerShell remediation scripts are located in the `scripts/` folder. Each `.
 
 ---
 
-## Post-Remediation Scan
+## Post-Remediation Scan Results
 
 After running each PowerShell script, a post-remediation scan was performed to validate the STIG checks have passed successfully. 
 
@@ -96,7 +95,7 @@ Post-remediation STIG scan results:
 [Post-Remediation Scan Report](https://github.com/malaya-m/Win10-STIG-Remediation/blob/main/scan-reports/Post-Remediation%20Scan%20-%20STIG%20Implementation.pdf)
 
 
-### Scan Results Summary
+### Impact Summary
 
 After implementing the prioritized STIG remediations, I conducted a post-remediation scan using Tenable Nessus. The initial scan identified **147 failed checks**, whereas the post-remediation scan shows **132 remaining failures**, indicating that **15 findings were successfully resolved** through remediation efforts.
 
