@@ -5,7 +5,7 @@ This repository showcases how I identified, remediated, and verified Windows 10 
 ## Table of Contents
 
 1. [Project Overview](#project-overview)
-2. [Initial Scan Results](#initial-scan-results)
+2. [Initial Scan](#initial-scan)
 3. [Remediation Steps](#remediation-steps)
 4. [Priority STIG Remediations](#priority-stig-remediations)
 5. [Scripts Directory](#scripts-directory)
@@ -23,7 +23,7 @@ This repository showcases how I identified, remediated, and verified Windows 10 
 
 ---
 
-## Initial Scan Results
+## Initial Scan
 
 An initial STIG scan was performed on Tenable which detected numerous policy failures. 
 
@@ -110,11 +110,14 @@ Below is a list and summary of each PowerShell remediation script included in th
 
 ---
 
-## Post-Remediation Scan Results
+## Post-Remediation Scan
 
 After running each PowerShell script, a post-remediation scan was performed to validate the STIG checks have passed successfully. 
 
 Post-remediation scan results:
+
+<img width="1121" height="341" alt="Post-Remediation Scan Results" src="https://github.com/user-attachments/assets/1a7b2060-eaba-43c7-b7d0-56a7c2334a15" />
+
 
 [View Scan Report]
 
