@@ -75,6 +75,8 @@ The table below highlights the STIG remediations that were prioritized based on 
 | WN10-AC-000005 / -000010 / -000015          | `Set-AccountLockoutPolicy.ps1`   | Enforces account lockout settings: 3 attempts, 15-minute duration and reset period. |
 | WN10-AC-000035 / -000040                    | `Set-PasswordPolicy.ps1`         | Enforces strong password policies: minimum 14 characters and complexity enabled. |
 | WN10-AC-000030                              | `Set-MinimumPasswordAge.ps1`     | Ensures users cannot change passwords repeatedly in a short time to bypass history restrictions. |
+| WN10-00-000130                              | `Rename-GuestAccount.ps1`        | Renames the built-in Guest account to reduce exposure to known account exploits. |
+
 
 ---
 
@@ -108,6 +110,9 @@ Below is a list and summary of each PowerShell remediation script included in th
 
 - **Set-MinimumPasswordAge.ps1**  
   Prevents users from changing passwords too frequently by setting the minimum password age to 1 day.
+
+- **Set-MinimumPasswordAge.ps1**  
+  Renames the default Windows Guest account to prevent exploitation by attackers who target accounts with known names.
 
 
 ---
